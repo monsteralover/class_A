@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/*web 페이지에서 사용할 공통 css 정의  */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form {
+	margin: 0px;
+	padding: 0px
+}
+
+fieldset, img {
+	border: 0px none
+}
+
+dl, ul, ol, li {
+	list-style: none
+}
+
+input, select, textarea {
+	vertical-align: middle
+}
+
+body, th, td, input, select, textarea {
+	font-size: 13px;
+	line-height: 1.7;
+	font-family: 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+	color: #333;
+}
+
+a {
+	color: #333;
+	text-decoration: none
+}
+
+a:hover {
+	color: #118eff;
+	text-decoration: underline
+}
+
+address {
+	font-style: normal;
+	font-weight: normal
+}
+
+.inputBox {
+	border: 1px solid #cbcbcb;
+	height: 30px;
+	background-color: #ffffff
+}
+
+.btn {
+	border: 1px solid #cbcbcb;
+	height: 34px;
+	background-color: #ffffff;
+	cursor:pointer;
+}
+.btnLoc {
+	border: 1px solid #cbcbcb;
+	height: 34px;
+	background-color: #ffffff;
+	cursor:pointer;
+}
+
+.dc_table {
+	border-top: 3px solid #313A76;
+	border-spacing: 0px
+}
+
+.dc_th {
+	height: 25px;
+	border-bottom: 1px solid #313a76; 
+	background-color : #fdfdfd;
+	font-weight: normal;
+	text-align: center;
+	background-color: #dfdfdf;
+}
+
+.dc_td {
+	height: 25px;
+	border-bottom: 1px solid #dfdfdf
+}
+
+.dc_td_center {
+	height: 25px;
+	border-bottom: 1px solid #dfdfdf;
+	text-align: center;
+}

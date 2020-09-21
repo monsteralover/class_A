@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://211.238.142.26/spring_mvc_template/common/css/main.css">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap{width:900px;height:900px; margin:0px auto;}
+#header{width:900px;height:180px;}
+#headerTop{width:900px;height:140px;position:relative; background:#ffffff url(http://211.238.142.26/spring_mvc_template/common/images/header_bg.png) repeat-x;}
+#mainText{font-family: 고딕,godic,sans-serif; font-size: 35px; font-weight: bold; width:140px; height:50px; margin: 0px auto; padding-top: 20px}
+#naviBar{width:900px;height:40px;}
+#container{width:900px; height:600px; position:relative;}
+#footer{width:900px; height:120px; position:relative;}
+#footerLogo{width:170px; height:60px;margin-left:10px; margin-top:10px;}
+#footerContent{width:700px; height:100px; margin-left:200px; margin-top:10px; font-family: 고딕,godic;
+margin-right:20px; font-size: 20px; text-align: right;}
+</style>
+<!--Google CDN  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	
+	
+});//ready
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+	<div id="headerTop">
+	<div id="mainText" title="A강의실입니다.">Class A</div>
+	</div>
+	<div id="naviBar"></div>
+	</div>
+	<div id="container">
+	
+	<ul>
+	<li><a href="http://localhost/spring_mvc_template/param/use_request.do?name=박형근&age=25&job=개발자">HttpServletRequset를 사용한 요청</a></li>
+	<li><a href="http://localhost/spring_mvc_template/param/use_variable.do?name=박형근&age=25&job=개발자">parameter를 사용한 요청</a></li>
+	<li><a href="http://localhost/spring_mvc_template/param/use_vo.do?name=박형근&age=25&job=개발자">VO를 사용한 요청</a></li>
+	</ul>  
+	
+	<form action="../param/post_param.do" method="post">
+	<label>이름:</label> <input type="text" name="name" class="inputBox"/><br/>
+	<label>나이:</label> <input type="text" name="age" class="inputBox"/><br/>
+	<label>취미:</label> 
+		<input type="checkbox" name="hobby" value="자바"/>자바<br/>
+		<input type="checkbox" name="hobby" value="등산"/>등산<br/>
+		<input type="checkbox" name="hobby" value="노래"/>노래<br/>
+		<input type="checkbox" name="hobby" value="오라클"/>오라클<br/>
+		<input type="submit" value="hobby" class="btnLoc"/>
+	
+	
+	</form>
+	
+	</div>
+	<div id="footer">
+		<div id="footerLogo"></div>
+		<div id="footerContent">
+		&copy;CopyRight. All Right Reserved. Class A
+		</div>
+	</div>
+</div>
+</body>
+</html>

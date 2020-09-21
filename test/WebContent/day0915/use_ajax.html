@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://211.238.142.26/spring_mvc_template/common/css/main.css">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap{width:900px;height:900px; margin:0px auto;}
+#header{width:900px;height:180px;}
+#headerTop{width:900px;height:140px;position:relative; background:#ffffff url(http://211.238.142.26/spring_mvc_template/common/images/header_bg.png) repeat-x;}
+#mainText{font-family: 고딕,godic,sans-serif; font-size: 35px; font-weight: bold; width:140px; height:50px; margin: 0px auto; padding-top: 20px}
+#naviBar{width:900px;height:40px;}
+#container{width:900px; height:600px; position:relative;}
+#footer{width:900px; height:120px; position:relative;}
+#footerLogo{width:170px; height:60px;margin-left:10px; margin-top:10px;}
+#footerContent{width:700px; height:100px; margin-left:200px; margin-top:10px; font-family: 고딕,godic;
+margin-right:20px; font-size: 20px; text-align: right;}
+</style>
+<!--Google CDN  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		
+		$.ajax({
+			url: "../use_responsebody.do",
+			type:"GET",	
+			dataType:"JSON",
+			error:function(xhr){
+				alert("에러");
+				console.log(xhr.status+"/"+xhr.status.Text);
+			},
+			success:function(jsonObj){
+				if(jsonObj.dataCnt != 0){
+					var selNode=document.getElementById("nameSel");
+					selNode.length=1; //남겨둘 옵션의 개수
+					
+					var output="<table border='1'><tr><th width='150'>이름</th><th width='100'>나이</th></tr>'"
+					
+					$.each(jsonObj.data,function(i, json){
+					selNode.options[i+1]=new Option(json.name+"("+json.age+")", json.name);
+					output+="<tr><td>"+json.name+"</td><td>"+json.age+"</td></tr>";
+					
+					});//each
+					output+="</table>";
+					
+					$("#nameDiv").html(output);
+					
+				}//end if
+			}//end success
+		});//ajax
+	});//click
+});//ready
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+	<div id="headerTop">
+	<div id="mainText" title="A강의실입니다.">Class A</div>
+	</div>
+	<div id="naviBar"></div>
+	</div>
+	<div id="container">
+
+	<input type="button" value="클릭" class="btnLoc" id="btn"/>
+	<div>
+	<select id="nameSel">
+		<option value="none">----회원선택----</option>
+	</select>
+	</div>	
+	<div id="nameDiv">
+	
+	</div>	
+	
+	</div>
+	<div id="footer">
+		<div id="footerLogo"></div>
+		<div id="footerContent">
+		&copy;CopyRight. All Right Reserved. Class A
+		</div>
+	</div>
+</div>
+</body>
+</html>
